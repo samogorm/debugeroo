@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,400i,500,600,700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+// Misc
+$colourShade: 8%;
+$colourTrans: 0.5;
+$colourTransLight: 0.2;
+
+// Colours
+$primary: #00ccbc;
+$secondary: #440063;
+$tertiary: #fff568;
+$light: #E6E8EC;
+$dark: #04080B;
+$danger: #FB5058;
+
+$colours: (
+  primary: (
+    base: $primary,
+    light: lighten($primary, $colourShade),
+    dark: darken($primary, $colourShade),
+    trans: transparentize($primary, $colourTrans),
+    transLight: transparentize($primary, $colourTransLight)
+  ),
+  secondary: (
+    base: $secondary,
+    light: lighten($secondary, $colourShade),
+    dark: darken($secondary, $colourShade),
+    trans: transparentize($secondary, $colourTrans),
+    transLight: transparentize($secondary, $colourTransLight)
+  ),
+  tertiary: (
+    base: $tertiary,
+    light: lighten($tertiary, $colourShade),
+    dark: darken($tertiary, $colourShade),
+    trans: transparentize($tertiary, $colourTrans),
+    transLight: transparentize($tertiary, $colourTransLight)
+  ),
+  light: (
+    base: $light,
+    light: lighten($light, $colourShade),
+    dark: darken($light, $colourShade),
+    trans: transparentize($light, $colourTrans),
+    transLight: transparentize($light, $colourTransLight)
+  ),
+  dark: (
+    base: $dark,
+    light: lighten($dark, $colourShade),
+    dark: darken($dark, $colourShade),
+    trans: transparentize($dark, $colourTrans),
+    transLight: transparentize($dark, $colourTransLight)
+  ),
+  danger: (
+    base: $danger,
+    light: lighten($danger, $colourShade),
+    dark: darken($danger, $colourShade),
+    trans: transparentize($danger, $colourTrans),
+    transLight: transparentize($danger, $colourTransLight)
+  ),
+);
+
+// Functions
+@function getColour($colour, $variant: base) {
+  @return map-get(map-get($colours, $colour), $variant);
+}

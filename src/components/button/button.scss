@@ -1,0 +1,40 @@
+@import './../../index.scss';
+
+.button {
+  border: none;
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  padding: 1rem 1.5rem;
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--primary {
+    background-color: getColour(primary);
+
+    &:hover {
+      background-color: getColour(primary, dark);
+    }
+  }
+
+  &--secondary {
+    background-color: getColour(secondary)
+
+    &:hover {
+      background-color: getColour(secondary, dark);
+    }
+  }
+
+  &--tertiary {
+    background-color: getColour(tertiary);
+
+    &:hover {
+      background-color: getColour(tertiary, dark);
+    }
+  }
+}
