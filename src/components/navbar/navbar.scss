@@ -1,0 +1,9 @@
+@import './../../index.scss';
+
+.navbar {
+  align-items: center;
+  border-bottom: 0.1rem solid getColour(light);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}

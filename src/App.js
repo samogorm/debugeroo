@@ -2,15 +2,13 @@ import React from 'react';
 
 import Button from './components/button/button';
 import Logo from './components/logo/logo';
+import Navbar from './components/navbar/navbar';
 
 const App = () => (
   <div className="app">
-    <Button
-      label="Test Button"
-      action={ () => console.log('Clicked')}
-    />
-
-    <Logo />
+   <Navbar
+    basketTotal="0.00"
+   />
   </div>
 );
 
