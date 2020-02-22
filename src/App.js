@@ -10,12 +10,13 @@ const App = () => (
     />
     <Button
       label="Test Button"
-      type="light"
+      colour="light"
       action={ () => console.log('Clicked')}
     />
      <Button
       label="Test Button"
-      type="danger"
+      colour="danger"
+      type="block"
       action={ () => console.log('Clicked')}
     />
   </div>

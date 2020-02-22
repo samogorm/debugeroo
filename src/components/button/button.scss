@@ -43,4 +43,8 @@
       background-color: getColour(danger, dark);
     }
   }
+
+  &--block {
+    width: 100%;
+  }
 }
