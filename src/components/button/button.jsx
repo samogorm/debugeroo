@@ -7,7 +7,7 @@ const Button = ({ label, type, icon, action }) => (
   <button onClick={ action } className={`button button--${type}`}>
     <span className="button__label">
       { icon && (
-        <span>
+        <span className="button__icon">
           { icon }
         </span>
       )}

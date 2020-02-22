@@ -8,6 +8,16 @@ const App = () => (
       label="Test Button"
       action={ () => console.log('Clicked')}
     />
+    <Button
+      label="Test Button"
+      type="light"
+      action={ () => console.log('Clicked')}
+    />
+     <Button
+      label="Test Button"
+      type="danger"
+      action={ () => console.log('Clicked')}
+    />
   </div>
 );
 

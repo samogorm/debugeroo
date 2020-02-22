@@ -8,7 +8,7 @@
   font-weight: 600;
   letter-spacing: 0.02rem;
   padding: 1rem 1.5rem;
-  transition: background-color .3s ease-in-out;
+  transition: all .3s ease-in-out;
 
   &:hover {
     cursor: pointer;
@@ -22,19 +22,25 @@
     }
   }
 
-  &--secondary {
-    background-color: getColour(secondary)
-
+  &--light {
+    border: 0.1rem solid getColour(light);
+    background-color: #FFFFFF;
+   
     &:hover {
-      background-color: getColour(secondary, dark);
+      background-color: rgba(0, 0, 0, 0.03);
+      border: 0.1rem solid getColour(primary);
+    }
+
+    .button__label {
+      color: getColour(dark);
     }
   }
 
-  &--tertiary {
-    background-color: getColour(tertiary);
+  &--danger {
+    background-color: getColour(danger);
 
     &:hover {
-      background-color: getColour(tertiary, dark);
+      background-color: getColour(danger, dark);
     }
   }
 }
