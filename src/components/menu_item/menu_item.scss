@@ -10,7 +10,7 @@
     background-position: center;
   }
 
-  &__body, &__footer {
+  &__body {
     padding: .8rem;
   }
 
@@ -22,6 +22,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+    padding: 0 .8rem .8rem .8rem;
   }
 
   &__price {
