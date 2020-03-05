@@ -2,11 +2,11 @@ import React from 'react';
 
 import Navbar from './components/navbar/navbar';
 import Category from './components/category/category';
+import Heading from './components/heading/heading';
+import MenuItem from './components/menu_item/menu_item';
 import { categories, featuredItems } from './data/data';
 
 import './app.scss';
-import Heading from './components/heading/heading';
-import MenuItem from './components/menu_item/menu_item';
 
 const App = () => (
   <div className="app">
