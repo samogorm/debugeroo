@@ -1,0 +1,31 @@
+.menu-item {
+  border-radius: 0.2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;
+  margin: 0 .75rem 1.5rem .75rem;
+
+  &__image {
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__body, &__footer {
+    padding: .8rem;
+  }
+
+  &__text {
+    margin: 0 0.5rem 1rem 0.5rem;
+  }
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
+}
