@@ -1,0 +1,40 @@
+.category {
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 0 0.5rem;
+  padding: 1.6rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0px 0px 5px rgba(0,0,55,0.37);
+  width: 100%;
+
+  &--aqua {
+    background-color: #00ccbc;
+  }
+
+  &--orange {
+    background-color: #FE9364;
+  }
+
+  &--blue {
+    background-color: #007E8A;
+  }
+
+  &--purple {
+    background-color: #440063;
+  }
+
+  &--red {
+    background-color: #FB5058;
+  }
+
+  &--yellow {
+    background-color: #fff568;
+  }
+
+  &--pink {
+    background-color: #9C006D;
+  }
+}

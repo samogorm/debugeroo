@@ -1,0 +1,10 @@
+.app {
+  &__body {
+    padding: 2rem;
+  }
+
+  &__categories {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
