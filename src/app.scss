@@ -4,8 +4,17 @@
   }
 
   &__category-list {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+
+    @media (min-width: 720px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(7, 1fr);
+    }
   }
 
   &__featured {
@@ -14,7 +23,15 @@
 
   &__featured-items {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto;
     grid-gap: 10px;
+
+    @media (min-width: 720px) {
+      grid-template-columns: auto auto;
+    }
+
+    @media (min-width: 1280px) {
+      grid-template-columns: auto auto auto auto;
+    }
   }
 }
