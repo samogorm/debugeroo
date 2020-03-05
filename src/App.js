@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from './components/button/button';
-import Logo from './components/logo/logo';
 import Navbar from './components/navbar/navbar';
 import Category from './components/category/category';
 import { categories, featuredItems } from './data/data';
@@ -39,6 +37,7 @@ const App = () => (
         { featuredItems.map(({ id, title, text, price, image }) => (
           <MenuItem
             key={ `featured-${ id }`}
+            id={ id }
             title={ title }
             text={ text }
             price={ price }
