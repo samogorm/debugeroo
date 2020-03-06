@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Heading from '../heading/heading';
 import Button from '../button/button';
+import binIcon from './../../assets/icons/bin.svg';
 
 import './basket.scss';
 
@@ -61,10 +62,11 @@ const Basket = ({ items, isOpen, updateBasketTotal }) => {
        <div className="basket__right">
          <Button
           label=""
-          icon="bin"
           colour="danger"
           action={ e => removeItem(e.currentTarget.getAttribute('basketitem')) }
           data={ item.id }
+          icon={ binIcon }
+          paddingSize="small"
          />
        </div>
       </div>

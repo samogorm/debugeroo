@@ -7,11 +7,25 @@
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.02rem;
-  padding: 0.8rem 1.5rem;
   transition: all .3s ease-in-out;
 
   &:hover {
     cursor: pointer;
+  }
+
+  &__icon,
+  &__icon-label {
+    height: 16px;
+  }
+
+  &__icon-label {
+    margin-right: 0.5rem;
+  }
+
+  &__label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   &--primary {
@@ -46,5 +60,13 @@
 
   &--block {
     width: 100%;
+  }
+
+  &--padding-normal {
+    padding: 0.8rem 1.5rem;
+  }
+
+  &--padding-small {
+    padding: 0.4rem .5rem
   }
 }

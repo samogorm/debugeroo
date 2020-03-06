@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 import Logo from './../logo/logo';
 import Button from '../button/button';
+import Basket from '../basket/basket';
+import basketIcon from './../../assets/icons/basket.svg';
 
 import './navbar.scss';
-import Basket from '../basket/basket';
 
 const Navbar = ({ basketItems }) => {
   const [ isBasketOpen, setIsBasketOpen ] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = ({ basketItems }) => {
       <div className="navbar__basket-total">
         <Button
           label={ `£${ basketTotal.toFixed(2) }` }
-          icon=""
+          icon={ basketIcon }
           colour="light"
           action={ () => setIsBasketOpen(!isBasketOpen) }
         />
