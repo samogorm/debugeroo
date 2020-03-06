@@ -1,0 +1,41 @@
+.basket {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;
+  flex-direction: column;
+  padding: 2rem;
+  min-width: 20rem;
+
+  &--open {
+    display: flex;
+  }
+
+  &--closed {
+    display: none;
+  }
+
+  &__no-items {
+    text-align: center;
+  }
+
+  &__item {
+    border-bottom: 1px solid #E6E8EC;
+    padding-top: 1rem;
+  }
+
+  &__item-title {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-bottom: .5rem;
+  }
+
+  &__item-quantity {
+    color: #a0a3a8;
+    font-weight: 400;
+    margin-left: .5rem;
+  }
+
+  &__footer {
+    padding-top: 1.8rem;
+  }
+}

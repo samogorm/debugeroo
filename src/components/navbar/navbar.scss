@@ -6,4 +6,11 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
+
+  &__basket {
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    z-index: 100;
+  }
 }

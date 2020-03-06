@@ -1,33 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Logo from './../logo/logo';
 import Button from '../button/button';
 
 import './navbar.scss';
+import Basket from '../basket/basket';
 
-const Navbar = ({ basketTotal }) => {
+const Navbar = ({ basketItems }) => {
   const [ isBasketOpen, setIsBasketOpen ] = useState(false);
+  const [ basketTotal, setBasketTotal ] = useState(0.00);
 
   return (
     <nav className="navbar">
       <div className="navbar__brand">
         <Logo />
       </div>
-      <div className="navbar__basket">
+      <div className="navbar__basket-total">
         <Button
-          label={ basketTotal }
+          label={ `£${ basketTotal.toFixed(2) }` }
           icon=""
           colour="light"
-          action={ () => console.log("Basket loading") }
+          action={ () => setIsBasketOpen(!isBasketOpen) }
+        />
+      </div>
+      <div className="navbar__basket">
+        <Basket
+          items={ basketItems }
+          isOpen={ isBasketOpen }
+          updateBasketTotal={ value => setBasketTotal(value) }
         />
       </div>
     </nav>
   );
 };
 
+Navbar.defaultProps = {
+  basketItems: [],
+};
+
 Navbar.propTypes = {
-  basketTotal: PropTypes.string.isRequired,
+  basketItems: PropTypes.array,
 };
 
 export default Navbar;

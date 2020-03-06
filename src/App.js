@@ -8,10 +8,33 @@ import { categories, featuredItems } from './data/data';
 
 import './app.scss';
 
+const exampleItems = [
+  {
+    id: 1,
+    title: 'Butternut Squash Soup',
+    price: '3.99',
+  },
+  {
+    id: 2,
+    title: 'Double Cheeseburger',
+    price: '5.99',
+  },
+  {
+    id: 3,
+    title: 'Pepperoni Pizza',
+    price: '12.99',
+  },
+  {
+    id: 2,
+    title: 'Double Cheeseburger',
+    price: '5.99',
+  },
+];
+
 const App = () => (
   <div className="app">
    <Navbar
-      basketTotal="£0.00"
+      basketItems={ exampleItems }
    />
 
    <div className="app__body">
