@@ -13,24 +13,26 @@ const App = () => {
 
   const addToBasket = item => setBasketItems([...basketItems, item]);
 
+  const updateBasket = items => {
+    const updatedItems = [];
+    items.forEach(item => {
+      const updateItem = {
+        id: item.id,
+        title: item.title,
+        price: item.sum,
+      };
+
+      updatedItems.push(updateItem);
+    });
+
+    setBasketItems(updatedItems);
+  };
+
   return (
     <div className="app">
      <Navbar
         basketItems={ basketItems }
-        updatedBasket={ items => {
-          const updatedItems = [];
-          items.forEach(item => {
-            const updateItem = {
-              id: item.id,
-              title: item.title,
-              price: item.sum,
-            };
-
-            updatedItems.push(updateItem);
-          });
-
-          setBasketItems(updatedItems);
-        }}
+        updatedBasket={ updateBasket }
      />
   
      <div className="app__body">
