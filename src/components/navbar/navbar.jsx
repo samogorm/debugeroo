@@ -8,7 +8,7 @@ import basketIcon from './../../assets/icons/basket.svg';
 
 import './navbar.scss';
 
-const Navbar = ({ basketItems }) => {
+const Navbar = ({ basketItems, updatedBasket }) => {
   const [ isBasketOpen, setIsBasketOpen ] = useState(false);
   const [ basketTotal, setBasketTotal ] = useState(0.00);
 
@@ -30,6 +30,7 @@ const Navbar = ({ basketItems }) => {
           items={ basketItems }
           isOpen={ isBasketOpen }
           updateBasketTotal={ value => setBasketTotal(value) }
+          updateBasketItems={ value => updatedBasket(value) }
         />
       </div>
     </nav>

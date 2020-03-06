@@ -7,8 +7,8 @@ import binIcon from './../../assets/icons/bin.svg';
 
 import './basket.scss';
 
-const Basket = ({ items, isOpen, updateBasketTotal }) => {
-  const [ basketItems, setBasketItems] = useState([]);
+const Basket = ({ items, isOpen, updateBasketTotal, updateBasketItems }) => {
+  const [ basketItems, setBasketItems ] = useState([]);
 
   useEffect(() => setBasketItems(formatItems()), [items]);
   useEffect(() => updateBasketTotal(calculateBasketTotal()), [basketItems]);
@@ -40,6 +40,7 @@ const Basket = ({ items, isOpen, updateBasketTotal }) => {
   const removeItem = id => {
     const updatedBasket = basketItems.filter(item => item.id !== Number(id) );
     setBasketItems(updatedBasket);
+    updateBasketItems(updatedBasket)
   };
 
   const displayNothingInBasket = () => (
@@ -56,7 +57,7 @@ const Basket = ({ items, isOpen, updateBasketTotal }) => {
           </h4>
           <Heading
             tag="h3"
-            title={ `£${ item.sum }` }
+            title={ `£${ item.sum.toFixed(2) }` }
           />
        </div>
        <div className="basket__right">
@@ -85,15 +86,15 @@ const Basket = ({ items, isOpen, updateBasketTotal }) => {
         { basketItems.length ? displayBasketItems() : displayNothingInBasket() }
       </div>
 
-      { basketItems.length &&
+      { basketItems.length ? (
         <div className="basket__footer">
-        <Button
-            label="Checkout"
-            type="block"
-            action={ () => console.log('Checkout...') }
-        />
+          <Button
+              label="Checkout"
+              type="block"
+              action={ () => console.log('Checkout...') }
+          />
         </div>
-      }
+      ) : null }
     </div>
   );
 };

@@ -7,7 +7,7 @@ import './menu_item.scss';
 import Button from '../button/button';
 
 
-const MenuItem = ({ id, title, text, price, image }) => (
+const MenuItem = ({ id, title, text, price, image, updateBasketItems }) => (
   <div className="menu-item">
     <div className="menu-item__image" style={{ backgroundImage: `url(${ image })`}}></div>
     <div className="menu-item__body">
@@ -25,7 +25,7 @@ const MenuItem = ({ id, title, text, price, image }) => (
       </span>
       <Button
         label="Add"
-        action={ () => console.log('Add item to basket') }
+        action={ () => updateBasketItems({ id, title, price }) }
       />
     </div>
   </div>
