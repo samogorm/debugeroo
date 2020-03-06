@@ -36,6 +36,11 @@ const Basket = ({ items, isOpen, updateBasketTotal }) => {
     return formattedItems;
   };
 
+  const removeItem = id => {
+    const updatedBasket = basketItems.filter(item => item.id !== Number(id) );
+    setBasketItems(updatedBasket);
+  };
+
   const displayNothingInBasket = () => (
     <p className="basket__no-items">Nothing in your basket :(</p>
   );
@@ -43,14 +48,25 @@ const Basket = ({ items, isOpen, updateBasketTotal }) => {
   const displayBasketItems = () => {
     return basketItems.map((item, index) => (
       <div className="basket__item" key={`basket-item-${index}`}>
+       <div className="basket__left">
         <h4 className="basket__item-title">
-          { item.title } 
-          <span className="basket__item-quantity">x{ item.quantity }</span>
-        </h4>
-        <Heading
-          tag="h3"
-          title={ `£${ item.sum }` }
-        />
+            { item.title } 
+            <span className="basket__item-quantity">x{ item.quantity }</span>
+          </h4>
+          <Heading
+            tag="h3"
+            title={ `£${ item.sum }` }
+          />
+       </div>
+       <div className="basket__right">
+         <Button
+          label=""
+          icon="bin"
+          colour="danger"
+          action={ e => removeItem(e.currentTarget.getAttribute('basketitem')) }
+          data={ item.id }
+         />
+       </div>
       </div>
     ));
   }

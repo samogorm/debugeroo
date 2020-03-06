@@ -3,22 +3,25 @@ import PropTypes from 'prop-types';
 
 import './button.scss';
 
-const Button = ({ label, colour, type, icon, action }) => (
-  <button onClick={ action } className={`button button--${ colour } button--${ type }`}>
-    <span className="button__label">
-      { icon && (
-        <span className="button__icon">
-          { icon }
-        </span>
-      )}
-      { label }
-    </span>
-  </button>
-);
+const Button = ({ label, colour, type, icon, action, data }) => {
+  return (
+    <button onClick={ action } className={`button button--${ colour } button--${ type }`} basketitem={data}>
+      <span className="button__label">
+        { icon && (
+          <span className="button__icon">
+            { icon }
+          </span>
+        )}
+        { label }
+      </span>
+    </button>
+  );
+}
 
 Button.defaultProps = {
   colour: 'primary',
-  type: 'normal'
+  type: 'normal',
+  data: null,
 };
 
 Button.propTypes = {
@@ -27,6 +30,7 @@ Button.propTypes = {
   type: PropTypes.string,
   icon: PropTypes.string,
   action: PropTypes.func,
+  data: PropTypes.any,
 };
 
 export default Button;

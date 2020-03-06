@@ -20,6 +20,8 @@
 
   &__item {
     border-bottom: 1px solid #E6E8EC;
+    display: flex;
+    justify-content: space-between;
     padding-top: 1rem;
   }
 
